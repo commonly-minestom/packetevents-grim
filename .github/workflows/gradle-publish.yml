@@ -69,6 +69,12 @@ jobs:
           name: sponge-build
           path: build/libs/packetevents-sponge-*.jar
 
+      - name: Upload build artifacts minestom
+        uses: actions/upload-artifact@v7
+        with:
+          name: minestom-build
+          path: build/libs/packetevents-minestom-*.jar
+
       - name: Publish with Gradle
         run: ./gradlew publish
         env:
