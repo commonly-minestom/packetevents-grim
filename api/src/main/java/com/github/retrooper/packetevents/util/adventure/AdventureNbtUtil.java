@@ -70,7 +70,7 @@ public final class AdventureNbtUtil {
 
     @SuppressWarnings("unchecked")
     private static BinaryTagType<?>[] buildNbtTagTypes() {
-        BinaryTagTypes.BYTE.id(); // initialize types
+        getTagId(BinaryTagTypes.BYTE); // initialize types
 
         // v4 keeps TYPES on BinaryTagType; v5 moves it to a subclass reachable via BYTE.
         List<BinaryTagType<? extends BinaryTag>> types = null;
