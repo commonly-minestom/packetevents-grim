@@ -1,5 +1,3 @@
-import org.gradle.api.tasks.testing.logging.TestExceptionFormat
-
 plugins {
     packetevents.`shadow-conventions`
     packetevents.`library-conventions`
@@ -13,11 +11,6 @@ dependencies {
     compileOnly(libs.minestom)
     compileOnly(libs.jctools)
     shadow(project(":api", "shadow"))
-
-    testImplementation(libs.minestom)
-    testImplementation(libs.jctools)
-    testImplementation(testlibs.bundles.junit)
-    testRuntimeOnly(testlibs.slf4j)
 }
 
 configure<JavaPluginExtension> {
@@ -29,12 +22,5 @@ configure<JavaPluginExtension> {
 tasks {
     withType<JavaCompile> {
         options.release = 25
-    }
-
-    test {
-        useJUnitPlatform()
-        testLogging {
-            exceptionFormat = TestExceptionFormat.FULL
-        }
     }
 }
